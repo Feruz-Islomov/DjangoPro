@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     # ichki app
     'accounts',
-    'pages'
+    'pages',
+    'articles'
 ]
 
 MIDDLEWARE = [
@@ -110,7 +111,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# wikipedia da time zones
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
@@ -126,6 +128,35 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+#Email BACKEND
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# DEFAULT_FROM_EMAIL = 'your_custom_email_account'
+# EMAIL_HOST = 'smtp'
+# EMAIL_HOST_USER='username'
+# EMAIL_HOST_PASSWORD = 'password'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+
+
+
+
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+
+
+
+
+
+
+
+
+
+
+
+

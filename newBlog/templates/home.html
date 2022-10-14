@@ -1,5 +1,18 @@
-{% extends 'base.html' %} {% block title %}Bosh sahifa{% endblock title %}
-{% block content %} {% if user.is_authenticated %} {{ user.username }}!
+{% extends 'base.html' %}
+{% block title %}Bosh sahifa{% endblock title %}
+{% block content %}
+<br />
+<div class="jumbotron">
+    <h1 class="display-4">Assalamu alaykum</h1>
+    <p class="lead">Firuz Islomov shasiy blogiga xush kelibsiz!</p>
+    <hr class="my-4">
+    <p>Bu yerda siz algoritmga oid masalalarni yechishni o'rganasiz</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" role="button">Postlarni ko'rish</a>
+    </p>
+</div>
+
+{% if user.is_authenticated %} {{ user.username }}!
 <p><a href="{% url 'logout' %}">Chiqib ketish</a></p>
 {% else %}
 <p>Saytga kirmagansiz</p>
